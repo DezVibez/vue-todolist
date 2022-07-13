@@ -27,25 +27,28 @@
 
         <div class="container">
 
+            <div class="d-flex m-3 p-3">
+
+            
+                    <input v-model = "newTask.text" type="text" placeholder="Aggiungi compito..." >
+
+
+                    <span @click="addTask()">
+
+                    <i class="bi bi-file-plus fs-3" ></i>
+
+                    </span>
+
+            </div>
+
             <ul>
                 <li v-for="(task, index) of tasks" class="d-flex justify-content-between":class=" { 'deleted-line' : task.done }"> {{task.text}} 
                     <span @click="deleteTask(index)">
                         <i class="bi bi-x-square-fill"></i>
                     </span>
-                </li>  
-
-                <li class="d-flex justify-content-between" > 
-
-
-                    <input v-model= "newTask.text" type="text" placeholder="Aggiungi compito...">
-
-
-                    <span @click="addTask">
-
-                        <i class="bi bi-file-plus"></i>
-
-                    </span>
-                </li> 
+                </li>
+                  
+                
             </ul>
 
 

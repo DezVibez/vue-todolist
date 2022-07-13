@@ -15,9 +15,8 @@ const root = new Vue({
     el: "#root",
     data: {
 
-
         newTask:{
-        text:  "",
+        text: '',
         done: false
         },
 
@@ -52,7 +51,11 @@ const root = new Vue({
 
         addTask(){
         this.tasks.push(this.newTask)
+        if(this.tasks.text = ""){
+            alert("inserisci una parola")
         }
+        
+        },
 
         
     }

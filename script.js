@@ -1,3 +1,22 @@
+
+/* IMPORTANTE! 
+
+In Questo ho esercizio ho sbagliato due cose, fondamentalmente.
+i parametri di spice sono invertiti. Come primo parametro richiede un indice,
+come secondo parametro il numero di elementi da eliminare a partire dall'indice. 
+io li ho invertiti.
+
+in secondo luogo, più importante. la creazione dell'oggetto da pushare,
+andava definita DENTRO il metodo addTask() e pushata nell'array.
+definendola nei data, sostanzialmente ogni modifica del value dell'input,
+agiva su tutti gli elementi creati dinamicamente. Richiamandola in una funzione,
+che agisce su ogni elemento del for stampo l'elemento stesso.
+*/
+
+
+
+
+
 /*MILESTONE 1
 Stampare all'interno di una lista, un item per ogni todo.
 Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
@@ -15,49 +34,53 @@ const root = new Vue({
     el: "#root",
     data: {
 
-        newTask:{
-        text: '',
-        done: false
-        },
+        newTask: '',
 
-        tasks:[
-        
-        {
-        text: "lavare l'auto",
-        done: true
-        },
-        
-        {
-        text: "fare la spesa",
-        done: false
-        },
-        
-        {
-        text: "stirare",
-        done: true
-        },
-        
-        {
-        text: "lavare le finestre",
-        done: false
-        }
-    ]
-        
+
+        tasks: [
+
+            {
+                text: "lavare l'auto",
+                done: true
+            },
+
+            {
+                text: "fare la spesa",
+                done: false
+            },
+
+            {
+                text: "stirare",
+                done: true
+            },
+
+            {
+                text: "lavare le finestre",
+                done: false
+            }
+        ]
+
     },
     methods: {
-        deleteTask(index){
-        this.tasks.splice(1, index)
+        deleteTask(index) {
+            this.tasks.splice(index, 1)
         },
 
-        addTask(){
-        this.tasks.push(this.newTask)
-        if(this.tasks.text = ""){
-            alert("inserisci una parola")
-        }
-        
+        addTask() {
+
+            let obj = {
+                text: this.newTask,
+                done: false
+            }
+
+            this.tasks.push(obj)
+
+
+
+
         },
 
-        
+
     }
 })
 

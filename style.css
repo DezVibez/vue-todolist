@@ -1,6 +1,16 @@
 
+ul {
+    list-style: none;
+}
+
 
 .deleted-line {
     text-decoration-line: line-through;
+}
+
+li {
+    border: 1px solid grey;
+    padding: 1rem;
+    font-size: 30px;
 }
 

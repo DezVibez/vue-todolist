@@ -14,6 +14,7 @@ console.log("Vue js ok", Vue)
 const root = new Vue({
     el: "#root",
     data: {
+        liViewStatus: true,
         tasks:[
         
         {
@@ -39,6 +40,10 @@ const root = new Vue({
         
     },
     methods: {
-        
+        deleteTask(index){
+        this.tasks.splice(1, index)
+        }
     }
 })
+
+

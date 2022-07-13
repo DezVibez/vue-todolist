@@ -27,8 +27,12 @@
 
         <div class="container">
 
-            <ul >
-                <li v-for="task of tasks" :class=" { 'deleted-line' : task.done }"> {{task.text}} </li>  
+            <ul>
+                <li v-for="(task, index) of tasks" class="d-flex justify-content-between":class=" { 'deleted-line' : task.done }"> {{task.text}} 
+                    <span @click="deleteTask(index)">
+                        <i class="bi bi-x-square-fill"></i>
+                    </span>
+                </li>  
             </ul>
 
 

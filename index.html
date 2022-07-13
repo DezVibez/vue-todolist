@@ -33,6 +33,19 @@
                         <i class="bi bi-x-square-fill"></i>
                     </span>
                 </li>  
+
+                <li class="d-flex justify-content-between" > 
+
+
+                    <input v-model= "newTask.text" type="text" placeholder="Aggiungi compito...">
+
+
+                    <span @click="addTask">
+
+                        <i class="bi bi-file-plus"></i>
+
+                    </span>
+                </li> 
             </ul>
 
 
